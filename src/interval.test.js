@@ -22,6 +22,7 @@ describe('overlaps', function () {
   let inter50100 = new Interval(50, 100)
   let inter1010 = new Interval(10, 10)
   let inter105 = new Interval(10, 5)
+
   test('Overlap 0 10 identique => true', () => {
     expect(inter010.overlaps(inter010)).toBe(true)
   })

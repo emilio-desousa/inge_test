@@ -1,6 +1,23 @@
 let Util = {};
 Util.factorial = (n) => {
 
+  if (n < 0) {
+    throw 'Unable to compute factorial for n < 0'
+  }
+
+  if (!(typeof n === "number") || Math.floor(n) !== n) {
+    throw 'Unable to compute factorial of non integer values'
+  }
+
+  if (n >= 100) {
+    throw 'Unable to compute factorial for n > 100'
+  }
+
+  if (0 === n) {
+    return 1;
+  }
+
+  return n * Util.factorial(n - 1);
 };
 
 /**
@@ -11,7 +28,16 @@ Util.factorial = (n) => {
  * @param {number} n
  * @returns {boolean}
  */
-Util.isPrime = function(n) {
+Util.isPrime = function (n) {
+  if (n === 1 || n === 0) {
+    return false;
+  }
+  if (n < 0) {
+    throw 'Unable to compute prime for n < 0'
+  }
+  for (var i = 2; i < n; i++)
+    if (n % i === 0) return false;
+  return true;
 
 };
 
@@ -25,8 +51,19 @@ Util.isPrime = function(n) {
  * @param {number} n
  * @returns {number}
  */
-Util.sumPrime = function(n) {
-
+Util.sumPrime = function (n) {
+  if (n < 0) {
+    throw 'Unable to compute sumPrime for n < 0'
+  }
+  if (n > 100000) {
+    throw 'Unable to compute sumPrime for n > 100 000'
+  }
+  sum = 0;
+  for (var i = 2; i <= n; i++) {
+    if (Util.isPrime(i))
+      sum = sum + i;
+  }
+  return sum;
 };
 
 /**
@@ -41,7 +78,19 @@ Util.sumPrime = function(n) {
  * @param {number} n
  * @returns {array}
  */
-Util.fizzBuzz = function(n) {
+Util.fizzBuzz = function (n) {
+  res = [];
+  for (var i = 1; i <= n; i++) {
+    if (i % 15 === 0)
+      res.push("FizzBuzz");
+    else if (i % 5 === 0)
+      res.push("Buzz");
+    else if (i % 3 == 0)
+      res.push("Fizz");
+    else
+      res.push(i);
+  }
+  return res;
 
 };
 

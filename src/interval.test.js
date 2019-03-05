@@ -50,6 +50,9 @@ describe('overlaps', function () {
   test('Overlap 10 5 avec 10 10 => false', () => {
     expect(inter105.overlaps(inter1010)).toBe(false)
   })
+  test('Overlap 10 10 avec 10 5 => false', () => {
+    expect(inter1010.overlaps(inter105)).toBe(false)
+  })
 
 });
 

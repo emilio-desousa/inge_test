@@ -110,6 +110,7 @@ describe('includes', function () {
 
 
 
+
   test('Includes 0 10 avec 10 20 => false', () => {
     expect(inter010.includes(inter1020)).toBe(false)
   })

@@ -107,31 +107,5 @@ describe('includes', function () {
   })
 
 
-
-
-
-
-  test('Includes 0 10 avec 10 20 => false', () => {
-    expect(inter010.includes(inter1020)).toBe(false)
-  })
-  test('Includes 10 20 avec 0 10 => false', () => {
-    expect(inter1020.overlaps(inter010)).toBe(false)
-  })
-  test('Includes 0 10 avec 50 100 => false', () => {
-    expect(inter010.overlaps(inter50100)).toBe(false)
-  })
-  test('Includes 50 100 avec 0 10 => false', () => {
-    expect(inter50100.overlaps(inter010)).toBe(false)
-  })
-  test('Includes 10 10 avec 10 10 => false', () => {
-    expect(inter1010.overlaps(inter1010)).toBe(false)
-  })
-  test('Includes 10 5 avec 10 10 => false', () => {
-    expect(inter105.overlaps(inter1010)).toBe(false)
-  })
-  test('Includes 10 10 avec 10 5 => false', () => {
-    expect(inter1010.overlaps(inter105)).toBe(false)
-  })
-
 });
 

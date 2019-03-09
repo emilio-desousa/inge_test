@@ -1,5 +1,4 @@
-const Interval = require('./interval');
-
+const Interval = require('./interval')
 
 /**
    * Exemple 1 :
@@ -53,8 +52,7 @@ describe('overlaps', function () {
   test('Overlap 10 10 avec 10 5 => false', () => {
     expect(inter1010.overlaps(inter105)).toBe(false)
   })
-
-});
+})
 
 /**
   * Retourne true si cet interval contient le paramètre interval
@@ -77,8 +75,6 @@ describe('includes', function () {
   let inter020 = new Interval(0, 20)
   let inter1020 = new Interval(10, 20)
   let inter50100 = new Interval(50, 100)
-  let inter1010 = new Interval(10, 10)
-  let inter105 = new Interval(10, 5)
   let inter510 = new Interval(5, 10)
 
   test('Includes 0 10 identique => true', () => {
@@ -105,10 +101,7 @@ describe('includes', function () {
   test('Includes 0 20 avec 5 10 => true ', () => {
     expect(inter020.includes(inter510)).toBe(true)
   })
-
-
-});
-
+})
 
 /**
  * Retourne l'union de deux intervals
@@ -147,7 +140,4 @@ describe('union', function () {
   test('union 0 10 avec 50 100 => 0 10 50 100 ', () => {
     expect(inter010.union(inter50100)).toEqual(new Interval(new Interval(0, 10), new Interval(50, 100)))
   })
-
-
 })
-

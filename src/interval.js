@@ -1,14 +1,14 @@
 class Interval {
-    constructor(start, end) {
-        this.start = start;
-        this.end = end
-    }
+  constructor (start, end) {
+    this.start = start
+    this.end = end
+  }
 
-    toString() {
-        return "[" + this.start + "," + this.end + "]";
-    }
+  toString () {
+    return '[' + this.start + ',' + this.end + ']'
+  }
 
-    /**
+  /**
      * Exemple 1 :
      *      interval1 =                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
      *      interval2 =                                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
@@ -22,11 +22,11 @@ class Interval {
      * @param {Interval} interval
      * @returns {boolean}
      */
-    overlaps(interval) {
-        return this.end > interval.start && this.start < interval.end;
-    }
+  overlaps (interval) {
+    return this.end > interval.start && this.start < interval.end
+  }
 
-    /**
+  /**
      * Retourne true si cet interval contient le paramètre interval
      *
      * Exemple 1 :
@@ -42,17 +42,14 @@ class Interval {
      * @param {Interval} interval
      * @returns {boolean}
      */
-    includes(interval) {
-        if (this.end === interval.end && this.start <= interval.start)
-            return true
-        if (this.end >= interval.end && this.start <= interval.start)
-            return true
+  includes (interval) {
+    if (this.end === interval.end && this.start <= interval.start) { return true }
+    if (this.end >= interval.end && this.start <= interval.start) { return true }
 
-        return false
+    return false
+  };
 
-    };
-
-    /**
+  /**
      * Retourne l'union de deux intervals
      *
      * Exemple 1 :
@@ -68,18 +65,13 @@ class Interval {
      * @param {Interval} interval
      * @returns {Interval[]}
      */
-    union(interval) {
-        if (this.includes(interval))
-            return this
-        if (interval.includes(this))
-            return interval
-        if (!this.overlaps(interval))
-            return new Interval(this, interval)
+  union (interval) {
+    if (this.includes(interval)) { return this }
+    if (interval.includes(this)) { return interval }
+    if (!this.overlaps(interval)) { return new Interval(this, interval) }
+  };
 
-
-    };
-
-    /**
+  /**
      * Retourne l'intersection de deux intervals
      *
      * Exemple 1 :
@@ -95,11 +87,11 @@ class Interval {
      * @param {Interval} interval
      * @returns {Interval|null}
      */
-    intersection(interval) {
+  intersection (interval) {
 
-    };
+  };
 
-    /**
+  /**
      * Retourne l'exclusion de deux intervals
      *
      * Exemple 1 :
@@ -115,9 +107,9 @@ class Interval {
      * @param {Interval} interval
      * @returns {Interval[]}
      */
-    exclusion(interval) {
+  exclusion (interval) {
 
-    };
+  };
 }
 
-module.exports = Interval;
+module.exports = Interval

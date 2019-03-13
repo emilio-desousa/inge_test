@@ -78,7 +78,6 @@ describe('includes', function () {
   let inter1020 = new Interval(10, 20)
   let inter50100 = new Interval(50, 100)
   let inter1010 = new Interval(10, 10)
-  let inter105 = new Interval(10, 5)
   let inter510 = new Interval(5, 10)
 
   test('Includes 0 10 identique => true', () => {

@@ -68,8 +68,12 @@ class Interval {
   union (interval) {
     if (this.includes(interval)) { return this }
     if (interval.includes(this)) { return interval }
-    if (!this.overlaps(interval)) { return new Interval(this, interval) }
-  };
+    if (!this.overlaps(interval)) {
+      if (this.end === interval.start) {
+        return new Interval(this.start, interval.end)
+      } else if (this.start === interval.end) { return new Interval(interval.start, this.end) } else { return new Interval(this, interval) }
+    }
+  }
 
   /**
      * Retourne l'intersection de deux intervals

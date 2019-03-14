@@ -1,24 +1,23 @@
-let Util = {};
+let Util = {}
 Util.factorial = (n) => {
-
   if (n < 0) {
-    throw 'Unable to compute factorial for n < 0'
+    throw new Error('Unable to compute factorial for n < 0')
   }
 
-  if (!(typeof n === "number") || Math.floor(n) !== n) {
-    throw 'Unable to compute factorial of non integer values'
+  if (!(typeof n === 'number') || Math.floor(n) !== n) {
+    throw new Error('Unable to compute factorial of non integer values')
   }
 
   if (n >= 100) {
-    throw 'Unable to compute factorial for n > 100'
+    throw new Error('Unable to compute factorial for n > 100')
   }
 
-  if (0 === n) {
-    return 1;
+  if (n === 0) {
+    return 1
   }
 
-  return n * Util.factorial(n - 1);
-};
+  return n * Util.factorial(n - 1)
+}
 
 /**
  * Détermine si n est un nombre premier.
@@ -30,17 +29,14 @@ Util.factorial = (n) => {
  */
 Util.isPrime = function (n) {
   if (n === 1 || n === 0) {
-    return false;
+    return false
   }
   if (n < 0) {
-    throw 'Unable to compute prime for n < 0'
+    throw new Error('Unable to compute prime for n < 0')
   }
-  for (var i = 2; i < n; i++)
-    if (n % i === 0) return false;
-  return true;
-
-};
-
+  for (var i = 2; i < n; i++) { if (n % i === 0) return false }
+  return true
+}
 
 /**
  * Additionne l'ensemble des nombres premiers de 2 à n
@@ -53,18 +49,17 @@ Util.isPrime = function (n) {
  */
 Util.sumPrime = function (n) {
   if (n < 0) {
-    throw 'Unable to compute sumPrime for n < 0'
+    throw new Error('Unable to compute sumPrime for n < 0')
   }
   if (n > 100000) {
-    throw 'Unable to compute sumPrime for n > 100 000'
+    throw new Error('Unable to compute sumPrime for n > 100 000')
   }
-  sum = 0;
+  var sum = 0
   for (var i = 2; i <= n; i++) {
-    if (Util.isPrime(i))
-      sum = sum + i;
+    if (Util.isPrime(i)) { sum = sum + i }
   }
-  return sum;
-};
+  return sum
+}
 
 /**
  * Cette méthode doit retourner un tableau de 1 à n tel que:
@@ -79,20 +74,12 @@ Util.sumPrime = function (n) {
  * @returns {array}
  */
 Util.fizzBuzz = function (n) {
-  res = [];
+  var res = []
   for (var i = 1; i <= n; i++) {
-    if (i % 15 === 0)
-      res.push("FizzBuzz");
-    else if (i % 5 === 0)
-      res.push("Buzz");
-    else if (i % 3 == 0)
-      res.push("Fizz");
-    else
-      res.push(i);
+    if (i % 15 === 0) { res.push('FizzBuzz') } else if (i % 5 === 0) { res.push('Buzz') } else if (i % 3 == 0) { res.push('Fizz') } else { res.push(i) }
   }
-  return res;
-
-};
+  return res
+}
 
 /**
  * Chiffre une phrase selon la règle suivante : Les A deviennent des B, les B des C, etc.
@@ -105,8 +92,6 @@ Util.fizzBuzz = function (n) {
  */
 Util.cipher = function (phrase) {
 
-};
+}
 
-
-module.exports = Util;
-
+module.exports = Util

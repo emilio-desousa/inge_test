@@ -169,6 +169,7 @@ describe('intersection', function () {
   let inter1020 = new Interval(10, 20)
   let inter50100 = new Interval(50, 100)
   let inter1010 = new Interval(10, 10)
+  let inter1030 = new Interval(10, 30)
   let inter510 = new Interval(5, 10)
   let inter525 = new Interval(5, 25)
 
@@ -190,7 +191,7 @@ describe('intersection', function () {
   test('intersection 50 100 avec 0 10 =>  [] ', () => {
     expect(inter50100.intersection(inter010)).toEqual([])
   })
-  test('intersection 50 100 avec 0 10 =>  [] ', () => {
+  test('intersection 0 10 avec 50 100 =>  [] ', () => {
     expect(inter010.intersection(inter50100)).toEqual([])
   })
   test('intersection 10 10 avec 10 10 => 10 10', () => {
@@ -207,5 +208,8 @@ describe('intersection', function () {
   })
   test('intersection 10 20 avec 0 10 => 0 20', () => {
     expect(inter1020.intersection(inter010)).toEqual(new Interval(10, 10))
+  })
+  test('intersection 0 20 avec 10 30 =>  10 20 ', () => {
+    expect(inter020.intersection(inter1030)).toEqual(new Interval(10, 20))
   })
 })

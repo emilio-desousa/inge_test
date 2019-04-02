@@ -3,3 +3,4 @@ package-lock.json
 .idea
 npm-debug.log
 coverage
+reports

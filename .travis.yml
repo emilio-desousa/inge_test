@@ -9,6 +9,5 @@ before_install:
 
 script:
   - npm run test 
-
-after_sucess:
   - codecov
+  - stryker run

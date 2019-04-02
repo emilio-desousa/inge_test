@@ -3,6 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "jest": {
+    "verbose": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 40,
+        "lines": 90,
+        "statements": -10
+      }
+    }
+  },
   "directories": {
     "test": "test"
   },

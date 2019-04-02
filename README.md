@@ -1,4 +1,5 @@
 [![codecov](https://codecov.io/gh/fanatiique/inge_test/branch/master/graph/badge.svg)](https://codecov.io/gh/fanatiique/inge_test)
+[![Build Status](https://travis-ci.com/fanatiique/inge_test.svg?branch=master)](https://travis-ci.com/fanatiique/inge_test)
 
 
 # **Ingénierie des tests - ENSIIE**

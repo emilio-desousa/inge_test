@@ -52,7 +52,7 @@ class Interval {
     /**
        * Retourne l'union de deux intervals
        *
-       * Exemple 1 :
+       * Exemple 1  :
        *      interval1 =                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
        *      interval2 =                                              ▓▓▓▓▓▓▓▓▓▓▓▓▓
        *      interval1.union(interval2) =>        ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒

@@ -8,5 +8,7 @@ before_install:
   - npm install
 
 script:
-  - codecov
   - npm run test
+
+after_sucess:
+  - codecov
